@@ -1,3 +1,2 @@
-# Full-resolution masters pulled off the old Adobe Portfolio CDN.
-# Kept locally as the archive; the site ships the optimized WebP in assets/img/.
-_masters/
+# Nothing excluded — full-resolution masters are versioned in _masters/
+# so the originals live with the site. See README.
