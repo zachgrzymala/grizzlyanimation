@@ -1,0 +1,10 @@
+# GitHub Pages build settings.
+#
+# Everything listed here stays in the repository — it is simply not copied
+# into the published site at grizzlyanimation.com. That keeps the 90 MB of
+# full-resolution masters versioned and backed up on GitHub without serving
+# them (and the build scripts) to the public web.
+exclude:
+  - _masters/      # full-res originals rescued from Adobe's CDN
+  - tools/         # build script + content manifests
+  - README.md
