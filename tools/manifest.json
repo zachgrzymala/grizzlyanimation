@@ -1,0 +1,759 @@
+{
+ "rebound": [
+  {
+   "t": "vimeo",
+   "id": "826372166",
+   "h": "f33d212a34"
+  },
+  {
+   "t": "text",
+   "v": "CHARACTER DESIGNS"
+  },
+  {
+   "t": "vimeo",
+   "id": "828854342",
+   "h": "f183bb619c"
+  },
+  {
+   "t": "vimeo",
+   "id": "828855781",
+   "h": "41d1259c30"
+  },
+  {
+   "t": "text",
+   "v": "ENVIRONMENT DESIGNS"
+  },
+  {
+   "t": "vimeo",
+   "id": "828473681",
+   "h": "b7b57e34d3"
+  },
+  {
+   "t": "img",
+   "uid": "b9e2a66c-f11d-4715-8550-d36e4fe97089",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "a493f470-4a36-4d23-8b05-fb7e5bfd55e9",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "3d3a8c7c-2e3b-43b4-9a69-890fe3bd0b4a",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "9b175ee9-cecf-47ed-8d09-9a4f1cf4e368",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "828469470",
+   "h": "53b895c531"
+  },
+  {
+   "t": "img",
+   "uid": "1fdc7339-e887-4957-9383-fe4fca7b6864",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "9c224f0f-8d75-4ce8-bb61-68242d5cc035",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "f19f8130-1672-48c2-bf5b-7b2c4e9de575",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "47f0a57c-e256-4c4c-9bd7-d33862aa3974",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "828481150",
+   "h": "d8faa34303"
+  },
+  {
+   "t": "img",
+   "uid": "4e607ba9-eef4-4576-9b5d-39c78b971834",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "34ec184f-9f99-4a80-a212-40b095749cb0",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "f307bc53-c0e7-41eb-9313-d223e0832490",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "8ccdc2d4-8209-4fe0-a97d-b6a08af343b7",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "text",
+   "v": "STORY & PROCESS"
+  },
+  {
+   "t": "vimeo",
+   "id": "828840388",
+   "h": "05d6b371dc"
+  },
+  {
+   "t": "vimeo",
+   "id": "831098131",
+   "h": "f47cd889f1"
+  },
+  {
+   "t": "vimeo",
+   "id": "832110624",
+   "h": "aa26719eaf"
+  },
+  {
+   "t": "text",
+   "v": "CONCEPT ART"
+  },
+  {
+   "t": "img",
+   "uid": "07cd87b2-eede-4697-a123-f3e979e7d5c3",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "8f33dd9e-d8fd-4b52-87be-68845e1e1f3b",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "9e2ca930-9ce5-4dcd-8154-f6ad4cd9cb7c",
+   "ext": "jpg",
+   "w": 3840,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "4849d61e-717d-4f47-9aa0-01285f618fb8",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "04c4daee-c987-4ba0-95c3-45f8086b0ad3",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "1c497f8e-86da-4d30-a552-3126ae389dc7",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "62c87b51-101c-4d5c-8aae-84f2d50f3d24",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "8d747f44-dcb8-44a1-93cf-f16618eb4037",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "4723c7eb-8fb4-464e-b20b-976809cacd87",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "0959488a-a0d3-4390-8e0e-d8039c7077f9",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "10c258e4-4aaa-4e67-849f-0d058d237e78",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "text",
+   "v": "1980s Stylized PROP DESIGNS"
+  },
+  {
+   "t": "vimeo",
+   "id": "829680938",
+   "h": "deabf624d6"
+  },
+  {
+   "t": "vimeo",
+   "id": "829681257",
+   "h": "022d11e231"
+  },
+  {
+   "t": "vimeo",
+   "id": "829681504",
+   "h": "83071a1641"
+  },
+  {
+   "t": "vimeo",
+   "id": "829682941",
+   "h": "015e983826"
+  },
+  {
+   "t": "vimeo",
+   "id": "829682845",
+   "h": "9638d40666"
+  },
+  {
+   "t": "vimeo",
+   "id": "829682778",
+   "h": "b02e064398"
+  },
+  {
+   "t": "vimeo",
+   "id": "829681435",
+   "h": "11c104840c"
+  },
+  {
+   "t": "vimeo",
+   "id": "829683074",
+   "h": "3ea3103141"
+  },
+  {
+   "t": "vimeo",
+   "id": "829683141",
+   "h": "c97244fefc"
+  },
+  {
+   "t": "vimeo",
+   "id": "829682574",
+   "h": "82fc267e16"
+  },
+  {
+   "t": "vimeo",
+   "id": "829682706",
+   "h": "a48bc8a121"
+  },
+  {
+   "t": "vimeo",
+   "id": "829682106",
+   "h": "eac45ceb79"
+  },
+  {
+   "t": "vimeo",
+   "id": "829681338",
+   "h": "437cc68b76"
+  },
+  {
+   "t": "vimeo",
+   "id": "830732587",
+   "h": "cc69014bbe"
+  },
+  {
+   "t": "text",
+   "v": "COPYRIGHT ZACH GRZYMALA 2023"
+  }
+ ],
+ "reel": [
+  {
+   "t": "vimeo",
+   "id": "715394863",
+   "h": "ca6a26f9de"
+  },
+  {
+   "t": "text",
+   "v": "RECENT PROJECTS:"
+  },
+  {
+   "t": "vimeo",
+   "id": "659180559",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "548574593",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "715387722",
+   "h": "08acb5a317"
+  },
+  {
+   "t": "vimeo",
+   "id": "555952766",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "695277853",
+   "h": "956b9f29dd"
+  },
+  {
+   "t": "vimeo",
+   "id": "555827342",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "555807863",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "555808398",
+   "h": ""
+  }
+ ],
+ "disney": [
+  {
+   "t": "text",
+   "v": "DISNEY CREATIVE GROUP WORKSHOP HOLIDAY ORNAMENT 3D DESIGN'BELLS RINGING AND LOTS OF SINGING!' CHRISTMAS MERCHANDISE ORNAMENT FEATURING MICKEY, PLUTO, & GOOFY*MODEL SHEETS PROVIDED BY DISNEY CREATIVE GROUP* / PROGRAMS USED: ZBRUSH, MAYA, NUKE, PHOTOSHOP, PREMIERE PRO"
+  },
+  {
+   "t": "vimeo",
+   "id": "804913290",
+   "h": "b4424c296c"
+  },
+  {
+   "t": "img",
+   "uid": "7a94ecea-9252-4c92-8c13-789b708883c3",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "24de2b39-32b7-4af3-b920-aebd67950c00",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "0da2de9a-d2c7-4659-a29e-ef976b65ed4b",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "a1da618a-0e09-4aba-aef5-93b93bade400",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "18b61e6e-8f24-4cd4-8931-69c6a2f7ce52",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "214b7092-0239-4337-bf93-5368b77a60aa",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "ee0be2c0-0e76-4c1a-a2b1-f46a13050902",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "4656d6f6-5fed-4ec6-a806-515ccda6fd94",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "7dc1e187-bac4-484a-8cbe-c43488a72fdf",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "b4d2746b-eca7-400f-aaf9-1bc1a2a4bc46",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "6144eac3-b3df-49fd-837a-8e7bb0e6d8d1",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  }
+ ],
+ "modeling": [
+  {
+   "t": "text",
+   "v": "CARLOS\"the HOTEL LOBBY BELLHOP\""
+  },
+  {
+   "t": "vimeo",
+   "id": "660767360",
+   "h": ""
+  },
+  {
+   "t": "img",
+   "uid": "e86988fa-3ce2-4d7a-8ed9-7c1c71b9f412",
+   "ext": "png",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "73c914d3-f60a-4b06-9c69-d3ce7292e426",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Carlos (Textured)"
+  },
+  {
+   "t": "img",
+   "uid": "1553dc55-fe70-4522-81ef-cf64da327abb",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Carlos (Shaded)"
+  },
+  {
+   "t": "img",
+   "uid": "9484d692-52be-4059-8420-e044fe45e14b",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Carlos (Wireframe)"
+  },
+  {
+   "t": "img",
+   "uid": "30370322-2ab2-47c6-afb4-2ce6c42bbcc4",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Trolley Trouble Set (Textured)"
+  },
+  {
+   "t": "img",
+   "uid": "a24cdd07-dba6-4bb5-8515-298a7ac83798",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Trolley Trouble Set (Shaded)"
+  },
+  {
+   "t": "img",
+   "uid": "9d89c165-50a6-4509-b2e9-f8193c721e9b",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Trolley Trouble Set (Wireframe)"
+  },
+  {
+   "t": "text",
+   "v": "HARVEY\"the GOLD MINE PROSPECTOR\""
+  },
+  {
+   "t": "vimeo",
+   "id": "660478038",
+   "h": ""
+  },
+  {
+   "t": "img",
+   "uid": "222f9048-e511-4808-9a47-790311a122f2",
+   "ext": "png",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "01eeaaac-587f-4e7d-8675-8d7365e7917a",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Harvey (Textured)"
+  },
+  {
+   "t": "img",
+   "uid": "b5bbe3b3-edbf-4d2a-83a8-3b3671a0a555",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Harvey (Shaded)"
+  },
+  {
+   "t": "img",
+   "uid": "b0d738fe-db01-4417-9f4b-dbb4bf6c8769",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Harvey (Wireframe)"
+  },
+  {
+   "t": "img",
+   "uid": "d43f68d0-fc41-4978-8221-801fe073e5d4",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Mining Mayhem Set (Textured)"
+  },
+  {
+   "t": "img",
+   "uid": "fe7dfd50-73b8-462b-b044-25e50f62b9ef",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Mining Mayhem Set (Shaded)"
+  },
+  {
+   "t": "img",
+   "uid": "7cafb22b-1946-468d-a356-d3b21bf0b4a1",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Mining Mayhem Set (Wireframe)"
+  },
+  {
+   "t": "text",
+   "v": "KAHUNA\"the TIPSY TIKI CUP\""
+  },
+  {
+   "t": "vimeo",
+   "id": "660767173",
+   "h": ""
+  },
+  {
+   "t": "img",
+   "uid": "7243a867-8718-4646-80eb-a05136fae0b8",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "83854b59-ced2-4910-9447-f2038ddc0417",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Kahuna (Textured)"
+  },
+  {
+   "t": "img",
+   "uid": "2a96131e-2c83-466e-9f59-e71a67db26c8",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Kahuna (Shaded)"
+  },
+  {
+   "t": "img",
+   "uid": "6ce38469-f26b-42fb-9a17-cf80d47e94fe",
+   "ext": "png",
+   "w": 1200,
+   "cap": "Kahuna (Wireframe)"
+  },
+  {
+   "t": "img",
+   "uid": "25a2bc92-a5d0-4b43-8e88-1894cff933bd",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Tipsy Tiki Set (Textured)"
+  },
+  {
+   "t": "img",
+   "uid": "cab2c5c9-8e84-4b39-b37e-a0f6a7556722",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Tipsy Tiki Set (Shaded)"
+  },
+  {
+   "t": "img",
+   "uid": "5a845ae3-ac3f-4008-b8ab-162aacf745aa",
+   "ext": "png",
+   "w": 1920,
+   "cap": "Tipsy Tiki Set (Wireframe)"
+  }
+ ],
+ "story": [
+  {
+   "t": "text",
+   "v": "ALDI CHRISTMAS 2022 / FEAST OF FOOTBALL TV SPOT*RESPONSIBLE FOR STORYBOARDS ONLY*"
+  },
+  {
+   "t": "yt",
+   "id": "79CnboGEvcM",
+   "h": ""
+  },
+  {
+   "t": "img",
+   "uid": "586aac3e-7e1c-46fa-b6e0-3ac0d313da90",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "e4a26df3-8e20-448e-ad2a-80d96ffdf40b",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "f834c030-7d22-45c5-9f29-1d1c4a318057",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "2b9e7a92-dbcb-45ff-b80a-ad4902e0ec6b",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "bd8fd0b9-63e6-4249-83ff-4b648232ff6e",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "e9122df3-3ead-4f35-9b08-a9b879e1a4b4",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "fa9fb6c5-d4d2-47ee-92e9-bc2da0ab49eb",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "cac63d3e-e8dc-474d-bfb0-7acd9ead0891",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "ce7bbd0b-f591-49c4-8b64-2f20d978025a",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "762273af-23c3-4943-a107-c48b85331445",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "41017461-352b-4862-8f32-57526d667f0a",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "8c6b6c99-98f3-42b4-babc-ee8aadac05b3",
+   "ext": "jpg",
+   "w": 1920,
+   "cap": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "831100960",
+   "h": "bb99c31bf5"
+  },
+  {
+   "t": "vimeo",
+   "id": "649244032",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "547665315",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "534619042",
+   "h": ""
+  },
+  {
+   "t": "vimeo",
+   "id": "522917749",
+   "h": ""
+  }
+ ],
+ "about": [
+  {
+   "t": "text",
+   "v": "Hi, I'm Zach Grzymala!I grew up in a small town called Bel Air, near Baltimore, Maryland. Growing up, I tried out basketball, dance, and even acting before I gave art a try. When I watched my first Pixar movie, I became encapsulated in the rich quality of an animated film. It was Wall-E, and I couldn't believe how much personality I could see in a small little robot. The storytelling and animation made my focus clear, I knew what I wanted to do. In my high school years, I studied art and animation, yearning to find a school where I could pursue my passion. Alas, I found Ringling College of Art and Design, which not only became a new place of study, but a sanctuary for my creativity. For the past four\u00a0years I have been learning all aspects of the Computer Animation pipeline, and still get inspired with each new project I tackle. I love the thrill of creating something new and exciting, and seeing the final product after months of hard work and dedication.The motivation and determination\u00a0that is reflected in my work inspires my audience to step outside of their comfort zone and accomplish their goals, no matter how difficult they may be.\u00a0Utilizing\u00a0the traditional principles of animation, through Autodesk Maya, ZBrush, Photoshop and many other programs,\u00a0I\u00a0bring environments and characters to life through compelling narratives, and thought-provoking stories."
+  },
+  {
+   "t": "img",
+   "uid": "c6f0054c-5b89-4128-88e0-ac348a527f59",
+   "ext": "png",
+   "w": 1200,
+   "cap": ""
+  },
+  {
+   "t": "img",
+   "uid": "554390e5-d325-472e-96b4-87e18f8fe7d5",
+   "ext": "png",
+   "w": 3840,
+   "cap": ""
+  }
+ ]
+}
