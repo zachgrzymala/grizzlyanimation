@@ -9,38 +9,44 @@ Replaces the old Adobe Portfolio site.
 
 ## Deploy: order of operations
 
-**Do these in order.** Nothing goes dark if you follow the sequence — the old site keeps
-serving until the new one is confirmed live.
+**Do these in order.** Nothing goes dark if you follow the sequence — the old Adobe site
+keeps serving until the new one is confirmed live.
 
-### 1. Put the site on GitHub
+The local repo is already initialised and committed. Replace `YOURNAME` below with your
+GitHub username.
+
+### 1. Create an empty repo on GitHub
+
+github.com → **New repository** → name it `grizzlyanimation` → **Public**
+(GitHub Pages needs public on a free account) → **do not** add a README, .gitignore or
+licence, the repo already has them → **Create repository**.
+
+### 2. Push
 
 ```bash
-git init
-git add .
-git commit -m "New portfolio site"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/grizzlyanimation.git
+git remote add origin https://github.com/YOURNAME/grizzlyanimation.git
 git push -u origin main
 ```
 
-> The repo **must** be public for GitHub Pages on a free account.
+First push is ~110 MB because the full-resolution masters are included, so give it a minute.
 
-### 2. Turn on Pages
+### 3. Turn on Pages
 
-Repo → **Settings** → **Pages** → Source: **Deploy from a branch** → Branch `main`, folder `/ (root)` → **Save**.
+Repo → **Settings** → **Pages** → Source: **Deploy from a branch** → Branch `main`,
+folder `/ (root)` → **Save**.
 
-Wait ~2 minutes, then confirm it works at `https://YOUR-USERNAME.github.io/grizzlyanimation/`.
+Wait ~2 minutes, then check `https://YOURNAME.github.io/grizzlyanimation/`.
 
 **Do not touch DNS until that URL loads correctly.**
 
-### 3. Point the domain (Namecheap)
+### 4. Point the domain (Namecheap)
 
-Your domain is registered at **Namecheap** — *not* Adobe — so cancelling Adobe cannot
-affect it. Domain is paid through **2027-02-10**.
+Your domain is registered at **Namecheap**, not Adobe, so cancelling Adobe cannot affect it.
+It is paid through **2027-02-10**.
 
 Namecheap → **Domain List** → `grizzlyanimation.com` → **Manage** → **Advanced DNS**.
 
-Delete the existing `A Record` pointing at `151.101.x.x` (that's Adobe's edge), then add:
+Delete the existing `A Record` pointing at `151.101.x.x` (that is Adobe's edge), then add:
 
 | Type | Host | Value | TTL |
 |---|---|---|---|
@@ -48,23 +54,32 @@ Delete the existing `A Record` pointing at `151.101.x.x` (that's Adobe's edge), 
 | A | `@` | `185.199.109.153` | Automatic |
 | A | `@` | `185.199.110.153` | Automatic |
 | A | `@` | `185.199.111.153` | Automatic |
-| CNAME | `www` | `YOUR-USERNAME.github.io.` | Automatic |
+| CNAME | `www` | `YOURNAME.github.io.` | Automatic |
 
-Leave any MX/email records alone.
+Leave any MX/email records alone. Note the trailing dot on the CNAME value.
 
-### 4. Attach the domain in GitHub
+### 5. Attach the domain in GitHub
 
-Settings → Pages → **Custom domain** → `grizzlyanimation.com` → Save.
-A `CNAME` file is already in this repo, so this should populate on its own.
+Settings → **Pages** → **Custom domain** → `grizzlyanimation.com` → **Save**.
+A `CNAME` file is already committed, so this should populate on its own.
 
-Once the DNS check passes (can take 15 min – 24 h), tick **Enforce HTTPS**.
+DNS propagation takes 15 minutes to 24 hours. Once GitHub's check passes, tick
+**Enforce HTTPS**.
 
-### 5. Only now, cancel Adobe Portfolio
+### 6. Only now, cancel Adobe Portfolio
 
-Confirm `https://grizzlyanimation.com` loads the new site with a valid padlock **first**.
-Then cancel the Adobe subscription.
+Confirm `https://grizzlyanimation.com` loads the new site with a valid padlock **first**,
+then cancel the subscription.
 
 ---
+
+## What is in the repo
+
+The masters are versioned here but **not published**. `_config.yml` excludes `_masters/`,
+`tools/` and `README.md` from the built site, so the 3840px originals stay backed up on
+GitHub without being downloadable from grizzlyanimation.com.
+
+To publish them anyway, delete those lines from `_config.yml`.
 
 ## What changed from the old site
 
@@ -152,9 +167,9 @@ Then open `http://localhost:8912`.
 │   ├── img/poster_w/     video poster frames
 │   └── docs/             downloadable resume
 ├── tools/                build script, source data, asset fetchers
-├── _masters/             full-res originals — gitignored, keep a backup
+├── _masters/             full-res originals — versioned, not published
 ├── CNAME                 grizzlyanimation.com
-└── .nojekyll             stops GitHub mangling the asset folders
+└── _config.yml           keeps _masters/ and tools/ out of the built site
 ```
 
 ## Design notes
