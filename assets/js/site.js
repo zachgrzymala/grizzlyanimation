@@ -80,13 +80,25 @@
     var startHero = function () {
       if (heroBg.dataset.loaded) return;
       heroBg.dataset.loaded = "1";
-      var f = document.createElement("iframe");
-      f.src = heroBg.getAttribute("data-hero-video");
+      var url = heroBg.getAttribute("data-hero-video");
+      var f;
+      if (/\.mp4(\?|$)/i.test(url)) {
+        // self-hosted loop — muted autoplay needs playsinline to start on iOS
+        f = document.createElement("video");
+        f.src = url;
+        f.muted = true; f.defaultMuted = true;
+        f.autoplay = true; f.loop = true; f.playsInline = true;
+        f.setAttribute("muted", ""); f.setAttribute("playsinline", "");
+        var go = f.play(); if (go && go.catch) go.catch(function () {});
+      } else {
+        f = document.createElement("iframe");
+        f.src = url;
+        f.setAttribute("frameborder", "0");
+        f.allow = "autoplay; fullscreen";
+      }
       f.setAttribute("title", "Ambient showreel loop");
       f.setAttribute("tabindex", "-1");
       f.setAttribute("aria-hidden", "true");
-      f.setAttribute("frameborder", "0");
-      f.allow = "autoplay; fullscreen";
       heroBg.appendChild(f);
     };
     if ("requestIdleCallback" in window) requestIdleCallback(startHero, { timeout: 2600 });

@@ -27,11 +27,11 @@ SOCIALS = [
 
 PAGES = [
     ("nfl.html",      "NFL",                "Aristocrat · shipped title"),
-    ("rebound.html",  "Rebound",            "Thesis short film"),
-    ("reel.html",     "Animation Reel",     "Demo reel & shorts"),
-    ("modeling.html", "Character Modeling", "Models, turnarounds, wireframes"),
     ("disney.html",   "Disney",             "Creative Group sculpts"),
-    ("story.html",    "Story",              "Boards & animatics"),
+    ("story.html",    "ALDI",               "Boards & animatics"),
+    ("rebound.html",  "Rebound",            "Thesis short film"),
+    ("reel.html",     "Reel",               "Demo reel & shorts"),
+    ("modeling.html", "Character Modeling", "Models, turnarounds, wireframes"),
     ("about.html",    "About",              "Bio, experience, contact"),
 ]
 
@@ -164,7 +164,7 @@ def navbar(current=""):
   </a>
   <nav class="nav__links" aria-label="Main">
     %s
-    <a class="nav__cta" href="mailto:%s">Hire me</a>
+    <a class="nav__cta" href="mailto:%s">Let’s talk</a>
   </nav>
   <button class="nav__burger" type="button" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -638,14 +638,14 @@ def build_story():
     ic = imgs("story")
     vs = [v for v in vids("story") if VID.get(v, {}).get("kind") != "yt"]
     boards = [(u, "ALDI Christmas 2022 — storyboard") for u, c in ic]
-    s = head("Story Development - " + NAME,
+    s = head("ALDI Feast of Football - " + NAME,
              "The ALDI Christmas 2022 Feast of Football TV spot, storyboarded by Zach Grzymala at PSYOP, "
              "with the 100+ panels behind it and five original story animatics.",
              rel="story.html", og="assets/img/md/586aac3e-7e1c-46fa-b6e0-3ac0d313da90.webp",
              page_cls="has-secnav")
     s += navbar("story.html")
     s += '<main id="main">'
-    s += phero("Story Development", "Boards & animatics",
+    s += phero("ALDI", "Feast of Football · PSYOP Studios · boards & animatics",
                "A national Christmas TV spot I boarded at PSYOP, and five original animatics "
                "from pitch to parallel-edit exercise.",
                plate(ALDI_ID, "ALDI Christmas 2022 — the aired spot", eager=True),
@@ -799,9 +799,12 @@ def build_about():
 # ---------------------------------------------------------------- NFL project
 
 NFL_URL = "https://www.aristocratgaming.com/us/games/us-nfl-super-grand-champions"
+NFL_VIDEO = "assets/video/nfl-hero-showcase.mp4"
+NFL_POSTER = "assets/img/poster_w/nfl-hero-showcase.webp"
+
 
 def plate_file(src, poster, title, sub="", dur="", eager=False):
-    """Poster plate for a self-hosted video file (opens a <video> in the lightbox)."""
+    """Poster plate for a self-hosted clip (opens a <video> in the lightbox)."""
     return """<button class="plate" type="button" data-video="%s" data-cap="%s" aria-label="Play %s">
   <img src="%s" alt="" loading="%s"%s decoding="async">
   <span class="plate__btn" aria-hidden="true"></span>
@@ -816,110 +819,130 @@ def plate_file(src, poster, title, sub="", dur="", eager=False):
                 ('<span class="plate__dur">%s</span>' % e(dur)) if dur else "")
 
 
-def nfl_tiles(items, cols, cut=True, sizes=None, eager=False):
-    """Grid of character cutouts, each its own lightbox entry."""
-    sizes = sizes or "(max-width:700px) 50vw, 25vw"
+def cut_tiles(items, cols, sizes, cls="", eager=0):
+    """Grid of alpha cutouts; each tile is one lightbox entry."""
     out = []
     for i, it in enumerate(items):
         u, cap = it["uid"], it["cap"]
-        out.append("""<button class="tile%s" type="button" data-full="assets/img/lg/%s.webp" data-cap="%s" aria-label="%s">
+        out.append("""<button class="tile tile--cut%s" type="button" data-full="assets/img/lg/%s.webp" data-cap="%s" aria-label="%s">
   <img src="assets/img/md/%s.webp" srcset="assets/img/sm/%s.webp 640w, assets/img/md/%s.webp 1400w"
        sizes="%s" alt="%s" loading="%s" decoding="async">
-  <span class="tile__cap">%s</span>
-</button>""" % (" tile--cut" if cut else "", u, e(cap), e(cap), u, u, u, sizes, e(cap),
-                "eager" if (eager and i < 4) else "lazy", e(cap)))
-    return '<div class="mgrid mgrid--%d" data-gallery>%s</div>' % (cols, "".join(out))
+</button>""" % (cls, u, e(cap), e(cap), u, u, u, sizes, e(cap),
+                "eager" if i < eager else "lazy"))
+    return '<div class="mgrid mgrid--%s" data-gallery>%s</div>' % (cols, "".join(out))
 
 
 def build_nfl():
     N = json.load(io.open(os.path.join(HERE, "nfl.json"), encoding="utf-8"))
-    chars  = N.get("characters", [])
-    cast   = N.get("cast", [])
-    badges = N.get("badges", [])
-    keyart = N.get("keyart", [])
-    pose   = N.get("pose", [])
+    keyart  = N.get("keyart", [])
+    heroes  = N.get("heroes", [])
+    badges  = N.get("badges", [])
+    cabinet = N.get("cabinet", [])
+    trophy  = N.get("trophy", [])
+    wide = keyart[0]["uid"] if keyart else None
+    med  = keyart[1]["uid"] if len(keyart) > 1 else None
 
     s = head("NFL Super Grand Champions - " + NAME,
              "Character art and animation for NFL Super Grand Champions, an officially licensed "
-             "NFL slot title at Aristocrat Gaming: hero showcase, 32 team characters, named action "
-             "poses and G2E 2025 key art by Zach Grzymala.",
-             rel="nfl.html", og="assets/img/poster_w/nfl-hero-showcase.webp",
-             page_cls="has-secnav")
+             "NFL title at Aristocrat Gaming: 32 team heroes, the G2E 2025 feature wall and the "
+             "hero showcase reel by Zach Grzymala.",
+             rel="nfl.html", og=NFL_POSTER, page_cls="has-secnav")
     s += navbar("nfl.html")
     s += '<main id="main">'
 
-    s += phero("NFL Super Grand Champions",
-               "Aristocrat Gaming · officially licensed NFL · shipping",
-               "Thirty-two team characters built and animated for a nationally licensed NFL title. "
-               "I worked the full character pipeline on this one &mdash; model, texture, rig, animate, "
-               "light and composite &mdash; alongside the art and game-design teams.",
-               plate_file("assets/video/nfl-hero-showcase.mp4",
-                          "assets/img/poster_w/nfl-hero-showcase.webp",
-                          "Hero showcase", "Animation reel for the title", "1:27", eager=True),
-               slate([("Studio", "Aristocrat Gaming"), ("Licence", "Official NFL"),
-                      ("Characters", "%d" % (len(cast) or 32)), ("My role", "3D art & animation")]))
+    # ---- hero: key art up front, showcase looping behind it
+    s += """<section class="hero hero--nfl">
+  <div class="hero__bg" data-hero-video="%s">
+    <img src="%s" alt="" fetchpriority="high" decoding="async">
+  </div>
+  <div class="hero__vp" aria-hidden="true"></div>
+  <div class="wrap hero__inner nflhero">
+    <a class="phero__back" href="index.html">All work</a>
+    <p class="eyebrow">Aristocrat Gaming · officially licensed NFL · shipping</p>
+    <h1 class="d2 nflhero__title">NFL Super Grand Champions</h1>
+    %s
+    <p class="lede nflhero__lede">Thirty-two team heroes built and animated for a nationally
+    licensed NFL title. I worked the full character pipeline &mdash; model, texture, rig,
+    animate, light and composite &mdash; alongside the art and game-design teams.</p>
+    %s
+  </div>
+</section>
+""" % (NFL_VIDEO, NFL_POSTER,
+       ('<div class="nflhero__art"><img src="assets/img/lg/%s.webp" '
+        'srcset="assets/img/md/%s.webp 1400w, assets/img/lg/%s.webp 1800w" '
+        'sizes="(max-width:1100px) 100vw, 1100px" '
+        'alt="NFL Super Grand Champions key art" fetchpriority="high" decoding="async"></div>'
+        % (wide, wide, wide)) if wide else "",
+       slate([("Studio", "Aristocrat Gaming"), ("Licence", "Official NFL"),
+              ("Heroes", "%d" % len(heroes)), ("My role", "3D art & animation")]))
 
-    nav_items = [("s-showcase", "Showcase")]
-    if keyart: nav_items.append(("s-keyart", "Key art"))
-    if chars:  nav_items.append(("s-characters", "Characters"))
-    if cast:   nav_items.append(("s-cast", "The cast"))
-    if badges: nav_items.append(("s-badges", "Team badges"))
-    s += secnav(nav_items, "%d renders · %d characters" % (
-        len(chars) + len(cast) + len(badges) + len(keyart) + len(pose), len(cast) or 32))
+    nav_items = [("s-g2e", "G2E"), ("s-heroes", "Heroes")]
+    if cabinet: nav_items.append(("s-cabinet", "The cabinet"))
+    nav_items.append(("s-badges", "Team badges"))
+    s += secnav(nav_items, "%d heroes · %d badges" % (len(heroes), len(badges)))
 
     s += '<section class="sec"><div class="wrap">'
 
-    # ---- showcase
-    s += subhead("Hero showcase", "1:27 · animation reel", "s-showcase")
-    s += ('<p class="lede rv">The in-game hero animations cut together &mdash; entrances, idles, '
-          'celebrations and win states for the team characters.</p>')
-    s += '<div class="rv" style="margin-top:18px">%s</div>' % plate_file(
-        "assets/video/nfl-hero-showcase.mp4", "assets/img/poster_w/nfl-hero-showcase.webp",
-        "NFL SGC — hero showcase", "Click to play with sound", "1:27")
+    # ---- G2E: the showcase reel + the feature wall
+    s += subhead("G2E 2025", "Showcase reel · feature wall", "s-g2e")
+    s += ('<p class="lede rv">Shown at G2E, the industry&rsquo;s largest trade show. The reel cuts '
+          'together the in-game hero animations &mdash; entrances, idles, celebrations and win '
+          'states; the wall art was printed at stand scale.</p>')
+    s += '<div class="rv mgrid mgrid--2" style="margin-top:18px;align-items:start">%s%s</div>' % (
+        plate_file(NFL_VIDEO, NFL_POSTER, "Hero showcase", "Click to play with sound", "1:27"),
+        ('<div data-gallery>%s</div>' % grid([(med, "G2E 2025 feature wall")], 1,
+                                             "(max-width:900px) 100vw, 50vw")) if med else "")
 
-    # ---- key art
-    if keyart:
-        s += subhead("Key art", "G2E 2025 feature walls", "s-keyart")
-        s += ('<p class="lede rv">The cast assembled for Aristocrat&rsquo;s stand at G2E 2025, the '
-              'industry&rsquo;s largest trade show. Printed at wall scale.</p>')
-        s += '<div class="rv" style="margin-top:18px">%s</div>' % gallery(
-            [(k["uid"], k["cap"]) for k in keyart], cols=2,
-            sizes="(max-width:900px) 100vw, 50vw")
+    # ---- the 32 heroes, 8 across
+    if heroes:
+        s += subhead("Heroes", "%d characters · one per club" % len(heroes), "s-heroes")
+        s += ('<p class="lede rv">Every club in the league gets its own hero. Each carries a '
+              'distinct silhouette, props and palette while staying on-model with the rest of '
+              'the roster.</p>')
+        s += '<div class="rv" style="margin-top:18px">%s</div>' % cut_tiles(
+            heroes, "8", "(max-width:560px) 25vw, (max-width:1000px) 16vw, 12vw",
+            cls=" tile--feet", eager=8)
 
-    # ---- named character poses
-    if chars:
-        s += subhead("Characters", "%d named poses" % len(chars), "s-characters")
-        s += ('<p class="lede rv">Hero poses built per team. Each one carries its own silhouette, '
-              'props and team palette while staying on-model with the rest of the roster.</p>')
-        s += '<div class="rv" style="margin-top:18px">%s</div>' % nfl_tiles(
-            chars, 4, sizes="(max-width:700px) 50vw, 25vw")
+    # ---- the physical cabinet
+    if cabinet:
+        s += subhead("The cabinet", "Where it all ends up", "s-cabinet")
+        s += '<div class="rv cabinet">'
+        s += '<div class="cabinet__art" data-gallery>%s</div>' % cut_tiles(
+            cabinet, "1", "(max-width:900px) 100vw, 46vw")
+        s += """<div class="cabinet__body">
+      <p>The characters do not stop at a render. They ship inside a physical Aristocrat
+      cabinet &mdash; dual portrait screens, a topper running the full roster, and the
+      progressive meters climbing above the reels.</p>
+      <p>Everything on that machine, from the hero leaping out of the attract loop to the
+      symbols on the reels, started as the same asset set on this page.</p>
+      %s
+      <div class="feature__actions" style="margin-top:20px">
+        <a class="btn btn--primary" href="%s" target="_blank" rel="noopener">See the game at Aristocrat</a>
+      </div>
+    </div>""" % (('<div class="cabinet__trophy" data-gallery>%s</div>' % cut_tiles(
+                     trophy, "1", "180px")) if trophy else "", NFL_URL)
+        s += '</div>'
 
-    if pose:
-        s += '<div class="rv" style="margin-top:14px">%s</div>' % nfl_tiles(
-            pose, 3, sizes="(max-width:700px) 100vw, 33vw")
+    s += '</div></section>'
 
-    # ---- full cast
-    if cast:
-        s += subhead("The cast", "%d characters" % len(cast), "s-cast")
-        s += ('<p class="lede rv">Every character in the title, rendered out for marketing and '
-              'in-game use.</p>')
-        s += '<div class="rv" style="margin-top:18px">%s</div>' % nfl_tiles(
-            cast, 6, sizes="(max-width:700px) 33vw, 16vw")
-
-    # ---- badges
+    # ---- badges as a running banner
     if badges:
-        s += subhead("Team badges", "%d marks" % len(badges), "s-badges")
-        s += ('<p class="lede rv">Per-team badge renders cut for campaign and email use across '
-              'the league.</p>')
-        s += '<div class="rv" style="margin-top:18px">%s</div>' % nfl_tiles(
-            badges, 6, sizes="(max-width:700px) 33vw, 16vw")
+        row = "".join(
+            '<span class="marquee__item"><img src="assets/img/sm/%s.webp" alt="%s" loading="lazy" decoding="async"><span>%s</span></span>'
+            % (b["uid"], e(b["cap"]), e(b["cap"])) for b in badges)
+        s += """<section class="sec sec--tight" id="s-badges">
+  <div class="wrap">
+    <h2 class="subhead jump rv" style="margin-top:0">Team badges<span>%d marks · campaign &amp; email</span></h2>
+  </div>
+  <div class="marquee" role="img" aria-label="Badge renders for all %d NFL clubs">
+    <div class="marquee__track">%s%s</div>
+  </div>
+</section>
+""" % (len(badges), len(badges), row, row)
 
-    s += ('<div class="feature__actions rv" style="margin-top:34px">'
-          '<a class="btn btn--primary" href="%s" target="_blank" rel="noopener">See the game at Aristocrat</a>'
-          '</div>' % NFL_URL)
-    s += ('<p class="note">NFL Super Grand Champions is &copy; Aristocrat Technologies and the NFL. '
-          'Shown here as portfolio work.</p>')
-    s += '</div></section></main>'
+    s += ('<div class="wrap"><p class="note">NFL Super Grand Champions is &copy; Aristocrat '
+          'Technologies and the NFL. Shown here as portfolio work.</p></div>')
+    s += '</main>'
     s += prevnext("nfl.html")
     s += contact_section() + foot()
     write("nfl.html", s)

@@ -2,707 +2,283 @@
  "keyart": [
   {
    "uid": "nfl-keyart-wide",
-   "cap": "NFL Super Grand Champions \u2014 G2E 2025 feature wall",
-   "group": "keyart",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "cap": "NFL Super Grand Champions \u2014 G2E 2025 feature wall"
   },
   {
    "uid": "nfl-keyart-med",
-   "cap": "NFL Super Grand Champions \u2014 G2E 2025 wall",
-   "group": "keyart",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "cap": "G2E 2025 wall"
   }
  ],
- "characters": [
+ "heroes": [
   {
-   "uid": "nfl-char-49ers-throw",
-   "cap": "49ers \u2014 Throw",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-01",
+   "cap": "Hero 01"
   },
   {
-   "uid": "nfl-char-bengals-basegame",
-   "cap": "Bengals \u2014 Base Game",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-02",
+   "cap": "Hero 02"
   },
   {
-   "uid": "nfl-char-bengals-claws",
-   "cap": "Bengals \u2014 Claws",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-03",
+   "cap": "Hero 03"
   },
   {
-   "uid": "nfl-char-browns-idle",
-   "cap": "Browns \u2014 Idle",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-04",
+   "cap": "Hero 04"
   },
   {
-   "uid": "nfl-char-panthers-claw",
-   "cap": "Panthers \u2014 Claw",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-05",
+   "cap": "Hero 05"
   },
   {
-   "uid": "nfl-char-raiders-run",
-   "cap": "Raiders \u2014 Run",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-06",
+   "cap": "Hero 06"
   },
   {
-   "uid": "nfl-char-raiders-sword",
-   "cap": "Raiders \u2014 Sword",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-07",
+   "cap": "Hero 07"
   },
   {
-   "uid": "nfl-char-rams-throw",
-   "cap": "Rams \u2014 Throw",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-08",
+   "cap": "Hero 08"
   },
   {
-   "uid": "nfl-char-ravens-raylewis",
-   "cap": "Ravens \u2014 Ray Lewis",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-09",
+   "cap": "Hero 09"
   },
   {
-   "uid": "nfl-char-ravens-run",
-   "cap": "Ravens \u2014 Run",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-10",
+   "cap": "Hero 10"
   },
   {
-   "uid": "nfl-char-saints-sax",
-   "cap": "Saints \u2014 Sax",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-11",
+   "cap": "Hero 11"
   },
   {
-   "uid": "nfl-char-titans-sword",
-   "cap": "Titans \u2014 Sword",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-12",
+   "cap": "Hero 12"
   },
   {
-   "uid": "nfl-char-vikings-basegame",
-   "cap": "Vikings \u2014 Base Game",
-   "group": "characters",
-   "w": 0,
-   "h": 0,
-   "alpha": true
-  }
- ],
- "cast": [
-  {
-   "uid": "nfl-cast-01",
-   "cap": "Character 01",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-13",
+   "cap": "Hero 13"
   },
   {
-   "uid": "nfl-cast-02",
-   "cap": "Character 02",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-14",
+   "cap": "Hero 14"
   },
   {
-   "uid": "nfl-cast-03",
-   "cap": "Character 03",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-15",
+   "cap": "Hero 15"
   },
   {
-   "uid": "nfl-cast-04",
-   "cap": "Character 04",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-16",
+   "cap": "Hero 16"
   },
   {
-   "uid": "nfl-cast-05",
-   "cap": "Character 05",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-17",
+   "cap": "Hero 17"
   },
   {
-   "uid": "nfl-cast-06",
-   "cap": "Character 06",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-18",
+   "cap": "Hero 18"
   },
   {
-   "uid": "nfl-cast-07",
-   "cap": "Character 07",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-19",
+   "cap": "Hero 19"
   },
   {
-   "uid": "nfl-cast-08",
-   "cap": "Character 08",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-20",
+   "cap": "Hero 20"
   },
   {
-   "uid": "nfl-cast-09",
-   "cap": "Character 09",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-21",
+   "cap": "Hero 21"
   },
   {
-   "uid": "nfl-cast-10",
-   "cap": "Character 10",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-22",
+   "cap": "Hero 22"
   },
   {
-   "uid": "nfl-cast-11",
-   "cap": "Character 11",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-23",
+   "cap": "Hero 23"
   },
   {
-   "uid": "nfl-cast-12",
-   "cap": "Character 12",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-24",
+   "cap": "Hero 24"
   },
   {
-   "uid": "nfl-cast-13",
-   "cap": "Character 13",
-   "group": "cast",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-hero-25",
+   "cap": "Hero 25"
   },
   {
-   "uid": "nfl-cast-14",
-   "cap": "Character 14",
-   "group": "cast",
-   "w": 1859,
-   "h": 2267,
-   "alpha": true
+   "uid": "nfl-hero-26",
+   "cap": "Hero 26"
   },
   {
-   "uid": "nfl-cast-15",
-   "cap": "Character 15",
-   "group": "cast",
-   "w": 1823,
-   "h": 2223,
-   "alpha": true
+   "uid": "nfl-hero-27",
+   "cap": "Hero 27"
   },
   {
-   "uid": "nfl-cast-16",
-   "cap": "Character 16",
-   "group": "cast",
-   "w": 1821,
-   "h": 2220,
-   "alpha": true
+   "uid": "nfl-hero-28",
+   "cap": "Hero 28"
   },
   {
-   "uid": "nfl-cast-17",
-   "cap": "Character 17",
-   "group": "cast",
-   "w": 1822,
-   "h": 2221,
-   "alpha": true
+   "uid": "nfl-hero-29",
+   "cap": "Hero 29"
   },
   {
-   "uid": "nfl-cast-18",
-   "cap": "Character 18",
-   "group": "cast",
-   "w": 2183,
-   "h": 2662,
-   "alpha": true
+   "uid": "nfl-hero-30",
+   "cap": "Hero 30"
   },
   {
-   "uid": "nfl-cast-19",
-   "cap": "Character 19",
-   "group": "cast",
-   "w": 1930,
-   "h": 2353,
-   "alpha": true
+   "uid": "nfl-hero-31",
+   "cap": "Hero 31"
   },
   {
-   "uid": "nfl-cast-20",
-   "cap": "Character 20",
-   "group": "cast",
-   "w": 1823,
-   "h": 2223,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-21",
-   "cap": "Character 21",
-   "group": "cast",
-   "w": 1810,
-   "h": 2207,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-22",
-   "cap": "Character 22",
-   "group": "cast",
-   "w": 1823,
-   "h": 2223,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-23",
-   "cap": "Character 23",
-   "group": "cast",
-   "w": 1823,
-   "h": 2223,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-24",
-   "cap": "Character 24",
-   "group": "cast",
-   "w": 1906,
-   "h": 2324,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-25",
-   "cap": "Character 25",
-   "group": "cast",
-   "w": 1822,
-   "h": 2221,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-26",
-   "cap": "Character 26",
-   "group": "cast",
-   "w": 1985,
-   "h": 2420,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-27",
-   "cap": "Character 27",
-   "group": "cast",
-   "w": 2008,
-   "h": 2448,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-28",
-   "cap": "Character 28",
-   "group": "cast",
-   "w": 1822,
-   "h": 2221,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-29",
-   "cap": "Character 29",
-   "group": "cast",
-   "w": 1823,
-   "h": 2223,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-30",
-   "cap": "Character 30",
-   "group": "cast",
-   "w": 1823,
-   "h": 2223,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-31",
-   "cap": "Character 31",
-   "group": "cast",
-   "w": 1823,
-   "h": 2223,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-cast-32",
-   "cap": "Character 32",
-   "group": "cast",
-   "w": 1822,
-   "h": 2221,
-   "alpha": true
+   "uid": "nfl-hero-32",
+   "cap": "Hero 32"
   }
  ],
  "badges": [
   {
    "uid": "nfl-badge-49ers",
-   "cap": "49ers",
-   "group": "badges",
-   "w": 1886,
-   "h": 1886,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-badge-alls",
-   "cap": "ALLs",
-   "group": "badges",
-   "w": 4146,
-   "h": 4146,
-   "alpha": true
+   "cap": "49ers"
   },
   {
    "uid": "nfl-badge-bears",
-   "cap": "Bears",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Bears"
   },
   {
    "uid": "nfl-badge-bengals",
-   "cap": "Bengals",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Bengals"
   },
   {
    "uid": "nfl-badge-bills",
-   "cap": "Bills",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Bills"
   },
   {
    "uid": "nfl-badge-broncos",
-   "cap": "Broncos",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Broncos"
   },
   {
    "uid": "nfl-badge-browns",
-   "cap": "Browns",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Browns"
   },
   {
    "uid": "nfl-badge-bucs",
-   "cap": "Bucs",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-badge-cabinet",
-   "cap": "Cabinet",
-   "group": "badges",
-   "w": 1853,
-   "h": 1853,
-   "alpha": true
+   "cap": "Bucs"
   },
   {
    "uid": "nfl-badge-cardinals",
-   "cap": "Cardinals",
-   "group": "badges",
-   "w": 1855,
-   "h": 1855,
-   "alpha": true
+   "cap": "Cardinals"
   },
   {
    "uid": "nfl-badge-chargers",
-   "cap": "Chargers",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Chargers"
   },
   {
    "uid": "nfl-badge-chiefs",
-   "cap": "Chiefs",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Chiefs"
   },
   {
    "uid": "nfl-badge-colts",
-   "cap": "Colts",
-   "group": "badges",
-   "w": 1848,
-   "h": 1848,
-   "alpha": true
+   "cap": "Colts"
   },
   {
    "uid": "nfl-badge-commanders",
-   "cap": "Commanders",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Commanders"
   },
   {
    "uid": "nfl-badge-cowboys",
-   "cap": "Cowboys",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Cowboys"
   },
   {
    "uid": "nfl-badge-dolphins",
-   "cap": "Dolphins",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Dolphins"
   },
   {
    "uid": "nfl-badge-eagles",
-   "cap": "Eagles",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Eagles"
   },
   {
    "uid": "nfl-badge-falcons",
-   "cap": "Falcons",
-   "group": "badges",
-   "w": 1898,
-   "h": 1898,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-badge-football",
-   "cap": "Football",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Falcons"
   },
   {
    "uid": "nfl-badge-giants",
-   "cap": "Giants",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-badge-jaguars1",
-   "cap": "Jaguars1",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Giants"
   },
   {
    "uid": "nfl-badge-jaguars2",
-   "cap": "Jaguars2",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-badge-jaguars",
-   "cap": "Jaguars",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Jaguars"
   },
   {
    "uid": "nfl-badge-jets",
-   "cap": "Jets",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Jets"
   },
   {
    "uid": "nfl-badge-lions",
-   "cap": "Lions",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Lions"
   },
   {
    "uid": "nfl-badge-packers",
-   "cap": "Packers",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Packers"
   },
   {
    "uid": "nfl-badge-panthers",
-   "cap": "Panthers",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Panthers"
   },
   {
    "uid": "nfl-badge-patriots",
-   "cap": "Patriots",
-   "group": "badges",
-   "w": 1912,
-   "h": 1912,
-   "alpha": true
+   "cap": "Patriots"
   },
   {
    "uid": "nfl-badge-raiders",
-   "cap": "Raiders",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Raiders"
   },
   {
    "uid": "nfl-badge-rams",
-   "cap": "Rams",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Rams"
   },
   {
    "uid": "nfl-badge-ravens",
-   "cap": "Ravens",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Ravens"
   },
   {
    "uid": "nfl-badge-saints",
-   "cap": "Saints",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-badge-seahawks1",
-   "cap": "Seahawks1",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Saints"
   },
   {
    "uid": "nfl-badge-seahawks2",
-   "cap": "Seahawks2",
-   "group": "badges",
-   "w": 1854,
-   "h": 1854,
-   "alpha": true
+   "cap": "Seahawks"
   },
   {
    "uid": "nfl-badge-steelers",
-   "cap": "Steelers",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Steelers"
   },
   {
    "uid": "nfl-badge-texans",
-   "cap": "Texans",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Texans"
   },
   {
    "uid": "nfl-badge-titans",
-   "cap": "Titans",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
-  },
-  {
-   "uid": "nfl-badge-trophy",
-   "cap": "Trophy",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Titans"
   },
   {
    "uid": "nfl-badge-vikings",
-   "cap": "Vikings",
-   "group": "badges",
-   "w": 1844,
-   "h": 1844,
-   "alpha": true
+   "cap": "Vikings"
   }
  ],
- "pose": [
+ "cabinet": [
   {
-   "uid": "nfl-pose-06-rams-launchpose",
-   "cap": "Rams \u2014 Launch Pose",
-   "group": "pose",
-   "w": 0,
-   "h": 0,
-   "alpha": true
+   "uid": "nfl-cabinet",
+   "cap": "The cabinet on the floor"
+  }
+ ],
+ "trophy": [
+  {
+   "uid": "nfl-trophy",
+   "cap": "Super Grand Champions trophy"
   }
  ]
 }
