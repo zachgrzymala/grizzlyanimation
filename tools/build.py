@@ -34,7 +34,7 @@ PAGES = [
     ("about.html",    "About",              "Bio, experience, contact"),
 ]
 
-LOGLINE = ("Personality,", "frame by frame.")   # hero headline — edit freely
+LOGLINE = ("Make today", "your masterpiece.")   # hero headline — edit freely
 ALDI_ID = "orVYWvH_Q9g"   # ALDI "Feast of Football" — the aired commercial
 REEL_ID = "715394863"     # 3D Animation Demo Reel
 FILM_ID = "826372166"     # Rebound
@@ -306,8 +306,9 @@ def build_index():
     ])
 
     s = head("Grizzly Animation Studios — " + NAME + ", 3D Animator",
-             "3D character animator and modeler. Ringling BFA, Walt Disney Creative Group alum, "
-             "Animator at Aristocrat Gaming. Reel, short films, character models and story work.",
+             "3D character animator and modeler. Animator at Aristocrat Gaming on the officially licensed "
+             "NFL Super Grand Champions, Ringling BFA, Walt Disney Creative Group alum. Reel, short "
+             "films, character models and story work.",
              rel="", og="assets/img/poster_w/%s.webp" % FILM_ID)
     s += navbar("")
     s += """<main id="main">
@@ -338,6 +339,25 @@ def build_index():
     </div>
   </div>
   <div class="scrollcue">Scroll</div>
+</section>
+
+<section class="sec sec--tight sec--panel" id="now">
+  <div class="wrap">
+    <div class="sec__head rv">
+      <p class="eyebrow">On casino floors now</p>
+      <h2 class="d2">NFL Super Grand Champions</h2>
+      <p class="lede">An officially licensed NFL title for Aristocrat Gaming, and my most recent
+      shipped work. I build original character and symbol content for titles like this one
+      end to end — modeling, texturing, rigging, animation and compositing — alongside the
+      art and game-design teams.</p>
+    </div>
+    %s
+    <div class="feature__actions rv">
+      <a class="btn btn--primary" href="https://www.aristocratgaming.com/us/games/us-nfl-super-grand-champions"
+         target="_blank" rel="noopener">See the game at Aristocrat</a>
+      <a class="btn" href="about.html">Full background</a>
+    </div>
+  </div>
 </section>
 
 <section class="sec sec--panel">
@@ -403,7 +423,7 @@ def build_index():
 <section class="sec">
   <div class="wrap about">
     <div class="about__photo rv">
-      <img src="assets/img/md/554390e5-d325-472e-96b4-87e18f8fe7d5.webp" alt="Zach Grzymala" loading="lazy" decoding="async">
+      <img src="assets/img/md/zach-portrait-2026.webp" alt="Zach Grzymala" loading="lazy" decoding="async">
     </div>
     <div class="about__body rv" data-rv="90">
       <p class="eyebrow">Who's behind it</p>
@@ -418,6 +438,8 @@ def build_index():
 
 </main>
 """ % (bg, hero_poster, e(LOGLINE[0]), e(LOGLINE[1]), e(vsrc(REEL_ID)),
+       slate([("Studio", "Aristocrat Gaming"), ("Licence", "Official NFL"),
+              ("My role", "3D art & animation"), ("Status", "Shipping")]),
        plate(FILM_ID, "Written & directed by Zach Grzymala"),
        slate([("Role", "Director / Animator"), ("Assets", "100% original"),
               ("Tools", "Maya · ZBrush · Substance"), ("Runtime", mmss(VID.get(FILM_ID, {}).get("dur")))]),
@@ -642,8 +664,10 @@ def build_story():
 TIMELINE = [
     ("2023 — Present", "Animator", "Aristocrat Gaming · Las Vegas, NV",
      "3D model, texture, rig, animate and composite original slot game modules end to end. "
-     "Establish visual wealth through symbol hierarchy and prop design, working alongside artists "
-     "and game designers to keep a cohesive look across titles."),
+     "Credits include the officially licensed <a href=\"https://www.aristocratgaming.com/us/games/us-nfl-super-grand-champions\" "
+     "target=\"_blank\" rel=\"noopener\">NFL Super Grand Champions</a>. Establish visual wealth through "
+     "symbol hierarchy and prop design, working alongside artists and game designers to keep a "
+     "cohesive look across titles."),
     ("Nov 2022 — Feb 2023", "3D Character Artist", "Walt Disney Creative Group Workshop · Orlando, FL",
      "Translated supplied 2D illustrations of Mickey, Pluto and Goofy into appealing 3D models for "
      "holiday merchandise, sculpting in ZBrush and Maya to Disney's model sheets and notes."),
@@ -690,8 +714,8 @@ def build_about():
             h, "".join("<li>%s</li>" % e(i) for i in items))
 
     photo = """<div class="about__photo">
-  <img src="assets/img/md/554390e5-d325-472e-96b4-87e18f8fe7d5.webp"
-       srcset="assets/img/sm/554390e5-d325-472e-96b4-87e18f8fe7d5.webp 640w, assets/img/md/554390e5-d325-472e-96b4-87e18f8fe7d5.webp 1400w"
+  <img src="assets/img/md/zach-portrait-2026.webp"
+       srcset="assets/img/sm/zach-portrait-2026.webp 640w, assets/img/md/zach-portrait-2026.webp 1400w"
        sizes="(max-width:980px) 100vw, 46vw" alt="Zach Grzymala" loading="eager" decoding="async">
 </div>"""
 
@@ -705,7 +729,7 @@ def build_about():
     s = head("About - " + NAME,
              "Zach Grzymala is a 3D animator and character artist in Las Vegas. Ringling BFA, Walt Disney "
              "Creative Group alum, currently Animator at Aristocrat Gaming.",
-             rel="about.html", og="assets/img/md/554390e5-d325-472e-96b4-87e18f8fe7d5.webp",
+             rel="about.html", og="assets/img/md/zach-portrait-2026.webp",
              page_cls="has-secnav")
     s += navbar("about.html")
     s += '<main id="main">'

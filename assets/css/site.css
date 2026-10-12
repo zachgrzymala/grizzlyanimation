@@ -641,7 +641,7 @@ a{color:inherit;text-decoration:none}
 .about__photo:hover img{transform:scale(1.03)}
 
 /* portrait media (the about photo is 1:1.39) must not blow past one screen */
-.about__photo img{width:100%;object-fit:cover;object-position:50% 15%;max-height:min(54svh,520px)}
+.about__photo img{width:100%;object-fit:cover;object-position:50% 25%;max-height:min(54svh,520px)}
 .phero--portrait .phero__grid{grid-template-columns:.8fr 1.2fr}
 @media (max-width:980px){
   .phero--portrait .phero__grid{grid-template-columns:1fr}
