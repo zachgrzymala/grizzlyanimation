@@ -103,15 +103,16 @@ To publish them anyway, delete those lines from `_config.yml`.
   · `s` story · `a` about. In the lightbox: `←` `→` to move, `Esc` to close.
 - **Scroll progress** bar across the top of every page.
 
-### ⚠️ One thing that was already broken
+### The ALDI spot
 
-The ALDI Christmas 2022 spot on your Story page (`youtube.com/embed/79CnboGEvcM`) is
-**dead** — the video returns `LOGIN_REQUIRED` and every thumbnail 404s. It has presumably
-been made private or removed. That embed is currently broken on your live Adobe site too.
+The Story page leads with the aired **ALDI "Feast of Football" Christmas 2022** commercial
+(`orVYWvH_Q9g`), with the 100+ storyboard panels behind it in the section below. The slate
+credits the role accurately: storyboards only, the finished film is PSYOP's and ALDI's.
 
-The rebuilt Story page leads with your 12 ALDI storyboard pages instead. If you have a
-working link, add it back in `tools/build.py` → `build_story()` — there's a marked comment
-showing exactly where.
+Note that the upload lives on a third-party ad-archive channel rather than ALDI's own, so it
+could be pulled — which is exactly what happened to the original embed (`79CnboGEvcM`, now
+returning `LOGIN_REQUIRED`). If it ever goes dead, swap the id in `ALDI_ID` near the top of
+`tools/build.py` and rebuild. The storyboards carry the section on their own either way.
 
 ---
 
