@@ -35,6 +35,7 @@ PAGES = [
 ]
 
 LOGLINE = ("Personality,", "frame by frame.")   # hero headline — edit freely
+ALDI_ID = "orVYWvH_Q9g"   # ALDI "Feast of Football" — the aired commercial
 REEL_ID = "715394863"     # 3D Animation Demo Reel
 FILM_ID = "826372166"     # Rebound
 
@@ -606,28 +607,28 @@ def build_story():
     vs = [v for v in vids("story") if VID.get(v, {}).get("kind") != "yt"]
     boards = [(u, "ALDI Christmas 2022 — storyboard") for u, c in ic]
     s = head("Story Development - " + NAME,
-             "Storyboards for the ALDI Christmas 2022 TV spot at PSYOP, plus five original story animatics by Zach Grzymala.",
+             "The ALDI Christmas 2022 Feast of Football TV spot, storyboarded by Zach Grzymala at PSYOP, "
+             "with the 100+ panels behind it and five original story animatics.",
              rel="story.html", og="assets/img/md/586aac3e-7e1c-46fa-b6e0-3ac0d313da90.webp",
              page_cls="has-secnav")
     s += navbar("story.html")
     s += '<main id="main">'
     s += phero("Story Development", "Boards & animatics",
-               "Professional boards for a national TV spot, and five original animatics from "
-               "pitch to parallel-edit exercise.",
-               '<div data-gallery>%s</div>' % grid(boards[:4], 2, "(max-width:980px) 50vw, 24vw", eager=True),
-               slate([("Client", "ALDI via PSYOP"), ("Panels", "100+"),
-                      ("Animatics", "%d" % len(vs)), ("Tools", "Photoshop · Premiere")]))
+               "A national Christmas TV spot I boarded at PSYOP, and five original animatics "
+               "from pitch to parallel-edit exercise.",
+               plate(ALDI_ID, "ALDI Christmas 2022 — the aired spot", eager=True),
+               slate([("Client", "ALDI via PSYOP"), ("My role", "Storyboards"),
+                      ("Panels", "100+"), ("Animatics", "%d" % len(vs))]))
     s += secnav([("s-aldi", "ALDI spot"), ("s-animatics", "Original animatics")],
                 "%d boards · %d animatics" % (len(boards), len(vs)))
     s += '<section class="sec"><div class="wrap">'
     s += subhead("ALDI Christmas 2022", "Feast of Football · PSYOP Studios", "s-aldi")
     s += ('<p class="lede rv">Contract storyboarder at PSYOP Studios, Los Angeles. Boarded 100+ panels '
           'of 3D characters over three weeks for the World Cup Christmas spot, working to director '
-          'notes. <strong>Storyboards only.</strong></p>')
-    # NOTE: the original site embedded YouTube 79CnboGEvcM here. That video is no longer publicly
-    # available (the watch page returns LOGIN_REQUIRED and every thumbnail 404s), so the boards
-    # carry this section instead. To restore it, add:  s += plate("<new-video-id>", "ALDI spot")
+          'notes. <strong>Storyboards only</strong> — the finished film belongs to PSYOP and ALDI.</p>')
+    # the spot itself is the page hero; this section carries the boards behind it
     s += '<div class="rv" style="margin-top:18px">%s</div>' % gallery(boards, cols=4)
+    s += '<p class="note">100+ panels boarded over three weeks · %d shown</p>' % len(boards)
     s += subhead("Original animatics", "%d pieces" % len(vs), "s-animatics")
     s += '<div class="rv">%s</div>' % plates(vs, cols=3)
     s += '<p class="note">Adobe Photoshop / Adobe Premiere Pro</p>'
