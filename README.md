@@ -127,6 +127,30 @@ python tools/build.py
 
 That rewrites the eight HTML pages. Commit and push; Pages redeploys automatically.
 
+### The NFL project
+
+`assets/NFL Page/` holds the raw deliverables — 663 MB, and three files (the 4K showcase
+master and the two G2E wall PNGs) each blow past GitHub's hard 100 MB per-file limit. That
+folder is **gitignored and is not backed up on GitHub**. Keep your own copy.
+
+What ships is generated from it:
+
+```bash
+python tools/process_nfl.py   # -> assets/img/{sm,md,lg}/nfl-*.webp + tools/nfl.json
+python tools/build.py         # -> nfl.html
+```
+
+`process_nfl.py` trims the transparent padding off every character render, pads each back out
+to a consistent aspect so the grids stay even, and writes alpha-preserving WebP at three
+sizes. The showcase video is transcoded separately:
+
+```bash
+ffmpeg -i "assets/NFL Page/NFL SGC HeroShowcase 06 22 2026.mp4"   -vf scale=1920:-2 -c:v libx264 -crf 26 -preset slow -pix_fmt yuv420p   -movflags +faststart -c:a aac -b:a 112k assets/video/nfl-hero-showcase.mp4
+```
+
+4K/136 MB in, 1080p/42 MB out — under GitHub's 50 MB warning threshold. It is self-hosted
+rather than on Vimeo, so the lightbox plays it with a real `<video>` element.
+
 ### Adding new work
 
 1. Drop full-res images in `_masters/`.

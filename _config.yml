@@ -11,3 +11,4 @@ exclude:
   - _masters
   - tools
   - README.md
+  - "NFL Page"      # raw deliverables; gitignored anyway, belt and braces

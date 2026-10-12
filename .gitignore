@@ -1,2 +1,6 @@
-# Nothing excluded — full-resolution masters are versioned in _masters/
-# so the originals live with the site. See README.
+# Raw NFL deliverables: 663 MB, and three files (the 4K showcase master and the
+# two G2E wall PNGs) each exceed GitHub's hard 100 MB per-file limit, so this
+# folder can never be committed. tools/process_nfl.py turns it into the WebP in
+# assets/img/ and the 1080p cut in assets/video/, which are what ship.
+# Keep your own backup of this folder — it is not on GitHub.
+assets/NFL Page/

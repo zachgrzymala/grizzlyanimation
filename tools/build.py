@@ -6,7 +6,7 @@ and writes plain HTML. No dependencies beyond the stdlib + Pillow (favicon only)
 
     python build.py
 """
-import json, os, html, re
+import json, os, html, re, io
 
 HERE = os.path.dirname(os.path.abspath(__file__))   # tools/
 ROOT = os.path.dirname(HERE)                        # site root (output)
@@ -26,6 +26,7 @@ SOCIALS = [
 ]
 
 PAGES = [
+    ("nfl.html",      "NFL",                "Aristocrat · shipped title"),
     ("rebound.html",  "Rebound",            "Thesis short film"),
     ("reel.html",     "Animation Reel",     "Demo reel & shorts"),
     ("modeling.html", "Character Modeling", "Models, turnarounds, wireframes"),
@@ -40,6 +41,14 @@ REEL_ID = "715394863"     # 3D Animation Demo Reel
 FILM_ID = "826372166"     # Rebound
 
 def e(s): return html.escape(str(s or ""), quote=True)
+
+def ver(path):
+    """Short content hash, appended to CSS/JS URLs so a deploy busts the cache."""
+    import hashlib
+    f = os.path.join(ROOT, path)
+    if not os.path.exists(f):
+        return ""
+    return "?v=" + hashlib.sha1(open(f, "rb").read()).hexdigest()[:8]
 
 def mmss(sec):
     if not sec: return ""
@@ -133,13 +142,14 @@ def head(title, desc, rel="", og=None, page_cls=""):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css%s">
 </head>
 <script>document.documentElement.className+=" js";</script>
 <body%s>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"></div>
 """ % (e(title), e(desc), SITE, rel, e(NAME), e(title), e(desc), SITE, og, SITE, rel,
+       ver("assets/css/site.css"),
        (' class="%s"' % page_cls) if page_cls else "")
 
 def navbar(current=""):
@@ -205,10 +215,10 @@ def foot():
   </div>
 </footer>
 %s
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js%s"></script>
 </body>
 </html>
-""" % (e(NAME), EMAIL, EMAIL, lightbox())
+""" % (e(NAME), EMAIL, EMAIL, lightbox(), ver("assets/js/site.js"))
 
 def write(fn, s):
     open(os.path.join(ROOT, fn), "w", encoding="utf-8").write(s)
@@ -353,9 +363,9 @@ def build_index():
     </div>
     %s
     <div class="feature__actions rv">
-      <a class="btn btn--primary" href="https://www.aristocratgaming.com/us/games/us-nfl-super-grand-champions"
-         target="_blank" rel="noopener">See the game at Aristocrat</a>
-      <a class="btn" href="about.html">Full background</a>
+      <a class="btn btn--primary" href="nfl.html">See the work</a>
+      <a class="btn" href="https://www.aristocratgaming.com/us/games/us-nfl-super-grand-champions"
+         target="_blank" rel="noopener">The game at Aristocrat</a>
     </div>
   </div>
 </section>
@@ -786,6 +796,135 @@ def build_about():
     write("about.html", s)
 
 
+# ---------------------------------------------------------------- NFL project
+
+NFL_URL = "https://www.aristocratgaming.com/us/games/us-nfl-super-grand-champions"
+
+def plate_file(src, poster, title, sub="", dur="", eager=False):
+    """Poster plate for a self-hosted video file (opens a <video> in the lightbox)."""
+    return """<button class="plate" type="button" data-video="%s" data-cap="%s" aria-label="Play %s">
+  <img src="%s" alt="" loading="%s"%s decoding="async">
+  <span class="plate__btn" aria-hidden="true"></span>
+  <span class="plate__meta">
+    <span><span class="plate__title">%s</span>%s</span>
+    %s
+  </span>
+</button>""" % (e(src), e(title), e(title), poster,
+                "eager" if eager else "lazy", ' fetchpriority="high"' if eager else "",
+                e(title),
+                ('<span class="plate__sub">%s</span>' % e(sub)) if sub else "",
+                ('<span class="plate__dur">%s</span>' % e(dur)) if dur else "")
+
+
+def nfl_tiles(items, cols, cut=True, sizes=None, eager=False):
+    """Grid of character cutouts, each its own lightbox entry."""
+    sizes = sizes or "(max-width:700px) 50vw, 25vw"
+    out = []
+    for i, it in enumerate(items):
+        u, cap = it["uid"], it["cap"]
+        out.append("""<button class="tile%s" type="button" data-full="assets/img/lg/%s.webp" data-cap="%s" aria-label="%s">
+  <img src="assets/img/md/%s.webp" srcset="assets/img/sm/%s.webp 640w, assets/img/md/%s.webp 1400w"
+       sizes="%s" alt="%s" loading="%s" decoding="async">
+  <span class="tile__cap">%s</span>
+</button>""" % (" tile--cut" if cut else "", u, e(cap), e(cap), u, u, u, sizes, e(cap),
+                "eager" if (eager and i < 4) else "lazy", e(cap)))
+    return '<div class="mgrid mgrid--%d" data-gallery>%s</div>' % (cols, "".join(out))
+
+
+def build_nfl():
+    N = json.load(io.open(os.path.join(HERE, "nfl.json"), encoding="utf-8"))
+    chars  = N.get("characters", [])
+    cast   = N.get("cast", [])
+    badges = N.get("badges", [])
+    keyart = N.get("keyart", [])
+    pose   = N.get("pose", [])
+
+    s = head("NFL Super Grand Champions - " + NAME,
+             "Character art and animation for NFL Super Grand Champions, an officially licensed "
+             "NFL slot title at Aristocrat Gaming: hero showcase, 32 team characters, named action "
+             "poses and G2E 2025 key art by Zach Grzymala.",
+             rel="nfl.html", og="assets/img/poster_w/nfl-hero-showcase.webp",
+             page_cls="has-secnav")
+    s += navbar("nfl.html")
+    s += '<main id="main">'
+
+    s += phero("NFL Super Grand Champions",
+               "Aristocrat Gaming · officially licensed NFL · shipping",
+               "Thirty-two team characters built and animated for a nationally licensed NFL title. "
+               "I worked the full character pipeline on this one &mdash; model, texture, rig, animate, "
+               "light and composite &mdash; alongside the art and game-design teams.",
+               plate_file("assets/video/nfl-hero-showcase.mp4",
+                          "assets/img/poster_w/nfl-hero-showcase.webp",
+                          "Hero showcase", "Animation reel for the title", "1:27", eager=True),
+               slate([("Studio", "Aristocrat Gaming"), ("Licence", "Official NFL"),
+                      ("Characters", "%d" % (len(cast) or 32)), ("My role", "3D art & animation")]))
+
+    nav_items = [("s-showcase", "Showcase")]
+    if keyart: nav_items.append(("s-keyart", "Key art"))
+    if chars:  nav_items.append(("s-characters", "Characters"))
+    if cast:   nav_items.append(("s-cast", "The cast"))
+    if badges: nav_items.append(("s-badges", "Team badges"))
+    s += secnav(nav_items, "%d renders · %d characters" % (
+        len(chars) + len(cast) + len(badges) + len(keyart) + len(pose), len(cast) or 32))
+
+    s += '<section class="sec"><div class="wrap">'
+
+    # ---- showcase
+    s += subhead("Hero showcase", "1:27 · animation reel", "s-showcase")
+    s += ('<p class="lede rv">The in-game hero animations cut together &mdash; entrances, idles, '
+          'celebrations and win states for the team characters.</p>')
+    s += '<div class="rv" style="margin-top:18px">%s</div>' % plate_file(
+        "assets/video/nfl-hero-showcase.mp4", "assets/img/poster_w/nfl-hero-showcase.webp",
+        "NFL SGC — hero showcase", "Click to play with sound", "1:27")
+
+    # ---- key art
+    if keyart:
+        s += subhead("Key art", "G2E 2025 feature walls", "s-keyart")
+        s += ('<p class="lede rv">The cast assembled for Aristocrat&rsquo;s stand at G2E 2025, the '
+              'industry&rsquo;s largest trade show. Printed at wall scale.</p>')
+        s += '<div class="rv" style="margin-top:18px">%s</div>' % gallery(
+            [(k["uid"], k["cap"]) for k in keyart], cols=2,
+            sizes="(max-width:900px) 100vw, 50vw")
+
+    # ---- named character poses
+    if chars:
+        s += subhead("Characters", "%d named poses" % len(chars), "s-characters")
+        s += ('<p class="lede rv">Hero poses built per team. Each one carries its own silhouette, '
+              'props and team palette while staying on-model with the rest of the roster.</p>')
+        s += '<div class="rv" style="margin-top:18px">%s</div>' % nfl_tiles(
+            chars, 4, sizes="(max-width:700px) 50vw, 25vw")
+
+    if pose:
+        s += '<div class="rv" style="margin-top:14px">%s</div>' % nfl_tiles(
+            pose, 3, sizes="(max-width:700px) 100vw, 33vw")
+
+    # ---- full cast
+    if cast:
+        s += subhead("The cast", "%d characters" % len(cast), "s-cast")
+        s += ('<p class="lede rv">Every character in the title, rendered out for marketing and '
+              'in-game use.</p>')
+        s += '<div class="rv" style="margin-top:18px">%s</div>' % nfl_tiles(
+            cast, 6, sizes="(max-width:700px) 33vw, 16vw")
+
+    # ---- badges
+    if badges:
+        s += subhead("Team badges", "%d marks" % len(badges), "s-badges")
+        s += ('<p class="lede rv">Per-team badge renders cut for campaign and email use across '
+              'the league.</p>')
+        s += '<div class="rv" style="margin-top:18px">%s</div>' % nfl_tiles(
+            badges, 6, sizes="(max-width:700px) 33vw, 16vw")
+
+    s += ('<div class="feature__actions rv" style="margin-top:34px">'
+          '<a class="btn btn--primary" href="%s" target="_blank" rel="noopener">See the game at Aristocrat</a>'
+          '</div>' % NFL_URL)
+    s += ('<p class="note">NFL Super Grand Champions is &copy; Aristocrat Technologies and the NFL. '
+          'Shown here as portfolio work.</p>')
+    s += '</div></section></main>'
+    s += prevnext("nfl.html")
+    s += contact_section() + foot()
+    write("nfl.html", s)
+
+
 def build_404():
     s = head("Page not found - " + NAME, "That page doesn't exist.", rel="404.html")
     s += navbar("")
@@ -852,6 +991,7 @@ def build_extras():
 if __name__ == "__main__":
     print("Building grizzlyanimation.com ...")
     build_index()
+    build_nfl()
     build_rebound()
     build_reel()
     build_modeling()

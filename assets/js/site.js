@@ -106,7 +106,10 @@
     var opener = null;
 
     function clearStage() {
-      $$(".lb__img, .lb__frame", lbStage).forEach(function (n) { n.remove(); });
+      $$(".lb__img, .lb__frame, .lb__video", lbStage).forEach(function (n) {
+        if (n.tagName === "VIDEO") { n.pause(); n.removeAttribute("src"); n.load(); }
+        n.remove();
+      });
     }
 
     function render() {
@@ -114,7 +117,16 @@
       var it = group[idx];
       if (!it) return;
       var node;
-      if (it.type === "video") {
+      if (it.type === "video" && /\.mp4(\?|$)/i.test(it.src)) {
+        // self-hosted clip — a real <video> rather than an embed
+        node = document.createElement("video");
+        node.className = "lb__video";
+        node.src = it.src;
+        node.controls = true;
+        node.autoplay = true;
+        node.playsInline = true;
+        node.setAttribute("title", it.cap || "Video");
+      } else if (it.type === "video") {
         node = document.createElement("iframe");
         node.className = "lb__frame";
         node.src = it.src;
