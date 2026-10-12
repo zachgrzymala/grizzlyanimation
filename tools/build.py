@@ -838,9 +838,10 @@ def build_nfl():
     heroes  = N.get("heroes", [])
     badges  = N.get("badges", [])
     cabinet = N.get("cabinet", [])
-    trophy  = N.get("trophy", [])
-    wide = keyart[0]["uid"] if keyart else None
-    med  = keyart[1]["uid"] if len(keyart) > 1 else None
+    by = {k["uid"]: k for k in keyart}
+    # the four-hero wall fronts the page; the wide cast wall sits in the G2E section
+    hero_art = "nfl-keyart-med"  if "nfl-keyart-med"  in by else None
+    sect_art = "nfl-keyart-wide" if "nfl-keyart-wide" in by else None
 
     s = head("NFL Super Grand Champions - " + NAME,
              "Character art and animation for NFL Super Grand Champions, an officially licensed "
@@ -870,9 +871,9 @@ def build_nfl():
 """ % (NFL_VIDEO, NFL_POSTER,
        ('<div class="nflhero__art"><img src="assets/img/lg/%s.webp" '
         'srcset="assets/img/md/%s.webp 1400w, assets/img/lg/%s.webp 1800w" '
-        'sizes="(max-width:1100px) 100vw, 1100px" '
+        'sizes="(max-width:900px) 100vw, 760px" '
         'alt="NFL Super Grand Champions key art" fetchpriority="high" decoding="async"></div>'
-        % (wide, wide, wide)) if wide else "",
+        % (hero_art, hero_art, hero_art)) if hero_art else "",
        slate([("Studio", "Aristocrat Gaming"), ("Licence", "Official NFL"),
               ("Heroes", "%d" % len(heroes)), ("My role", "3D art & animation")]))
 
@@ -890,8 +891,8 @@ def build_nfl():
           'states; the wall art was printed at stand scale.</p>')
     s += '<div class="rv mgrid mgrid--2" style="margin-top:18px;align-items:start">%s%s</div>' % (
         plate_file(NFL_VIDEO, NFL_POSTER, "Hero showcase", "Click to play with sound", "1:27"),
-        ('<div data-gallery>%s</div>' % grid([(med, "G2E 2025 feature wall")], 1,
-                                             "(max-width:900px) 100vw, 50vw")) if med else "")
+        ('<div data-gallery>%s</div>' % grid([(sect_art, "G2E 2025 feature wall")], 1,
+                                             "(max-width:900px) 100vw, 50vw")) if sect_art else "")
 
     # ---- the 32 heroes, 8 across
     if heroes:
@@ -900,8 +901,7 @@ def build_nfl():
               'distinct silhouette, props and palette while staying on-model with the rest of '
               'the roster.</p>')
         s += '<div class="rv" style="margin-top:18px">%s</div>' % cut_tiles(
-            heroes, "8", "(max-width:560px) 25vw, (max-width:1000px) 16vw, 12vw",
-            cls=" tile--feet", eager=8)
+            heroes, "8", "(max-width:560px) 33vw, (max-width:1000px) 16vw, 12vw", eager=8)
 
     # ---- the physical cabinet
     if cabinet:
@@ -915,12 +915,10 @@ def build_nfl():
       progressive meters climbing above the reels.</p>
       <p>Everything on that machine, from the hero leaping out of the attract loop to the
       symbols on the reels, started as the same asset set on this page.</p>
-      %s
       <div class="feature__actions" style="margin-top:20px">
         <a class="btn btn--primary" href="%s" target="_blank" rel="noopener">See the game at Aristocrat</a>
       </div>
-    </div>""" % (('<div class="cabinet__trophy" data-gallery>%s</div>' % cut_tiles(
-                     trophy, "1", "180px")) if trophy else "", NFL_URL)
+    </div>""" % NFL_URL
         s += '</div>'
 
     s += '</div></section>'

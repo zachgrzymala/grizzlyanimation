@@ -82,14 +82,17 @@
       heroBg.dataset.loaded = "1";
       var url = heroBg.getAttribute("data-hero-video");
       var f;
-      if (/\.mp4(\?|$)/i.test(url)) {
-        // self-hosted loop — muted autoplay needs playsinline to start on iOS
+      var localClip = /\.mp4(\?|$)/i.test(url);
+      if (localClip) {
+        // Autoplay only sticks if the element is muted BEFORE a source is
+        // attached, and play() only works once it is in the document — doing
+        // either the other way round leaves the clip sitting on frame one.
         f = document.createElement("video");
-        f.src = url;
         f.muted = true; f.defaultMuted = true;
-        f.autoplay = true; f.loop = true; f.playsInline = true;
+        f.autoplay = true; f.loop = true; f.playsInline = true; f.preload = "auto";
         f.setAttribute("muted", ""); f.setAttribute("playsinline", "");
-        var go = f.play(); if (go && go.catch) go.catch(function () {});
+        f.setAttribute("autoplay", ""); f.setAttribute("loop", "");
+        f.src = url;
       } else {
         f = document.createElement("iframe");
         f.src = url;
@@ -100,6 +103,17 @@
       f.setAttribute("tabindex", "-1");
       f.setAttribute("aria-hidden", "true");
       heroBg.appendChild(f);
+      if (localClip) {
+        var kick = function () {
+          var go = f.play();
+          if (go && go.catch) go.catch(function () {});
+        };
+        kick();
+        f.addEventListener("canplay", kick, { once: true });
+        f.addEventListener("loadeddata", kick, { once: true });
+        // some browsers only release autoplay after the first interaction
+        document.addEventListener("pointerdown", kick, { once: true });
+      }
     };
     if ("requestIdleCallback" in window) requestIdleCallback(startHero, { timeout: 2600 });
     else setTimeout(startHero, 1500);

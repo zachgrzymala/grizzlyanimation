@@ -68,7 +68,7 @@ def emit(src, uid, caption, aspect=None):
 
 
 def main():
-    man = {"keyart": [], "heroes": [], "badges": [], "cabinet": [], "trophy": []}
+    man = {"keyart": [], "heroes": [], "badges": [], "cabinet": []}
 
     # G2E 2025 trade-show walls (no alpha)
     for f, uid, cap in [
@@ -88,7 +88,6 @@ def main():
     # the physical cabinet, and the Super Grand trophy
     for f, uid, cap, key in [
         ("Cabinet_EmailSig.png", "nfl-cabinet", "The cabinet on the floor", "cabinet"),
-        ("Trophy_EmailSig.png",  "nfl-trophy",  "Super Grand Champions trophy", "trophy"),
     ]:
         p = os.path.join(SRC, f)
         if os.path.exists(p):
