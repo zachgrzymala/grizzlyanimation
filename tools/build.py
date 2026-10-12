@@ -808,8 +808,13 @@ def build_extras():
         print("  wrote assets/docs/zach-grzymala-resume.png")
 
     write("CNAME", "grizzlyanimation.com\n")
-    open(os.path.join(ROOT, ".nojekyll"), "w").close()
-    print("  wrote .nojekyll")
+    # No .nojekyll: Pages must run Jekyll so _config.yml can keep _masters/
+    # and tools/ out of the published site. Writing one here silently
+    # re-published 90 MB of originals after every rebuild.
+    stale = os.path.join(ROOT, ".nojekyll")
+    if os.path.exists(stale):
+        os.remove(stale)
+        print("  removed stale .nojekyll")
     write("robots.txt", "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % SITE)
 
     urls = ["", "rebound.html", "reel.html", "modeling.html", "disney.html", "story.html", "about.html"]

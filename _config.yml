@@ -1,10 +1,13 @@
 # GitHub Pages build settings.
 #
-# Everything listed here stays in the repository — it is simply not copied
-# into the published site at grizzlyanimation.com. That keeps the 90 MB of
-# full-resolution masters versioned and backed up on GitHub without serving
-# them (and the build scripts) to the public web.
+# There must be NO .nojekyll file in this repo. With one present Pages skips
+# Jekyll entirely, this file is ignored, and every path below gets published —
+# which silently served 90 MB of full-resolution originals from the live site.
+# tools/build.py deletes a stray .nojekyll on each build for that reason.
+#
+# Everything listed here stays in the repository; it is simply not copied into
+# the published site at grizzlyanimation.com.
 exclude:
-  - _masters/      # full-res originals rescued from Adobe's CDN
-  - tools/         # build script + content manifests
+  - _masters
+  - tools
   - README.md
