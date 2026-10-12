@@ -33,8 +33,12 @@ def titleise(stem):
     return " — ".join(out)
 
 
-def trim_to_content(im, aspect=None):
-    """Crop transparent padding, then pad back out to a uniform aspect."""
+def trim_to_content(im, aspect=None, anchor="center"):
+    """Crop transparent padding, then pad back out to a uniform aspect.
+
+    anchor="bottom" seats the figure on the bottom edge, so a standing
+    character meets the frame instead of floating in the middle of it.
+    """
     if im.mode not in ("RGBA", "LA"):
         return im
     im = im.convert("RGBA")
@@ -42,21 +46,24 @@ def trim_to_content(im, aspect=None):
     if bbox:
         im = im.crop(bbox)
     w, h = im.size
-    mx, my = int(w * PAD), int(h * PAD)
-    w2, h2 = w + mx * 2, h + my * 2
+    mx = int(w * PAD)
+    my = 0 if anchor == "bottom" else int(h * PAD)
+    w2 = w + mx * 2
+    h2 = h + my * (2 if anchor != "bottom" else 0) + (int(h * PAD) if anchor == "bottom" else 0)
     if aspect:
         if w2 / h2 > aspect: h2 = int(w2 / aspect)
         else:                w2 = int(h2 * aspect)
     canvas = Image.new("RGBA", (w2, h2), (0, 0, 0, 0))
-    canvas.paste(im, ((w2 - w) // 2, (h2 - h) // 2))
+    y = h2 - h if anchor == "bottom" else (h2 - h) // 2
+    canvas.paste(im, ((w2 - w) // 2, y))
     return canvas
 
 
-def emit(src, uid, caption, aspect=None):
+def emit(src, uid, caption, aspect=None, anchor="center"):
     if all(os.path.exists(os.path.join(ROOT, "assets", "img", k, uid + ".webp")) for k in SIZES):
         return {"uid": uid, "cap": caption}
     im = Image.open(src)
-    im = trim_to_content(im, aspect) if im.mode in ("RGBA", "LA") else im.convert("RGB")
+    im = trim_to_content(im, aspect, anchor) if im.mode in ("RGBA", "LA") else im.convert("RGB")
     w, h = im.size
     for k, mx in SIZES.items():
         nw = min(w, mx); nh = max(1, round(h * nw / w))
@@ -83,7 +90,7 @@ def main():
     for p in sorted(glob.glob(os.path.join(SRC, "Heroes", "Hero_*.png"))):
         num = re.search(r"Hero_(\d+)", os.path.basename(p))
         n = num.group(1) if num else "00"
-        man["heroes"].append(emit(p, "nfl-hero-" + n, "Hero %s" % n, aspect=0.82))
+        man["heroes"].append(emit(p, "nfl-hero-" + n, "Hero %s" % n, aspect=0.82, anchor="bottom"))
 
     # the physical cabinet, and the Super Grand trophy
     for f, uid, cap, key in [

@@ -889,7 +889,7 @@ def build_nfl():
     s += ('<p class="lede rv">Shown at G2E, the industry&rsquo;s largest trade show. The reel cuts '
           'together the in-game hero animations &mdash; entrances, idles, celebrations and win '
           'states; the wall art was printed at stand scale.</p>')
-    s += '<div class="rv mgrid mgrid--2" style="margin-top:18px;align-items:start">%s%s</div>' % (
+    s += '<div class="rv mgrid mgrid--2 g2e" style="margin-top:18px">%s%s</div>' % (
         plate_file(NFL_VIDEO, NFL_POSTER, "Hero showcase", "Click to play with sound", "1:27"),
         ('<div data-gallery>%s</div>' % grid([(sect_art, "G2E 2025 feature wall")], 1,
                                              "(max-width:900px) 100vw, 50vw")) if sect_art else "")
